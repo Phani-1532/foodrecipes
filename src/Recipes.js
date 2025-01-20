@@ -1,5 +1,4 @@
 import React from 'react'
-
 function Recipes({data}) {
   return (
     <div>
