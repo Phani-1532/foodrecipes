@@ -1,20 +1,25 @@
-import React from 'react'
-function Recipes({data}) {
+import React from 'react';
+import './Recipes.css';
+
+function Recipes({ data }) {
   return (
-    <div>
-      <div className='row'>
-        {data.map(data => <div className='col-md-4'>
-            <div className='card'>
-                <img className='card-img-top' src={data.image} alt={data.name} />
-                <div className='card-body'>
-                  <h5 className='card-title'>{data.name}</h5>
-                  <p className='card-text'>{data.description}</p>
-                </div>
+    <div className="recipes-container">
+      <div className="recipes-grid">
+        {data.map((recipe, index) => (
+          <div className="recipe-card" key={index}>
+            <div className="recipe-card-inner">
+              <img className="recipe-img" src={recipe.img || 'https://via.placeholder.com/300'} alt={recipe.title} />
+              <div className="recipe-details">
+                <h5 className="recipe-title">{recipe.title}</h5>
+                <p className="recipe-text"><strong>Ingredients:</strong> {recipe.ingredients}</p>
+                <p className="recipe-text"><strong>Instructions:</strong> {recipe.instructions}</p>
+              </div>
             </div>
-        </div>)}
+          </div>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Recipes
+export default Recipes;
