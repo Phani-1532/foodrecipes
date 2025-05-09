@@ -16,8 +16,11 @@ const App = () => {
     })
       .then((response) => response.json())
       .then((data) => setData(data))
+      .then(() => setSearch(''))
       .catch((err) => console.log('Error: ' + err));
   };
+
+  console.log(data)
 
   return (
     <div className="app-container">

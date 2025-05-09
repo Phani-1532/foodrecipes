@@ -48,6 +48,7 @@ body {
     height: 200px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    padding: 10px;
   }
   
   .recipe-card:hover .recipe-img {
